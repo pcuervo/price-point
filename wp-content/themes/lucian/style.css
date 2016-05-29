@@ -13,3 +13,37 @@ Text Domain: lucian
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+/*Padding*/
+
+
+/*Display*/
+.hidden { display: none; }
+
+/*Width*/
+
+@media (min-width: 768px){ .vc_col-sm-2.width--20 { width: 20%; } }
+
+/*Testimonial*/
+
+.zo-grid-testimonial .zo-testimonial-inner { border: none!important;}
+
+/*Counter*/
+.vc_column_container.no-padding--right-col>.vc_column-inner{ padding-right: 0px!important;}
+.zo-counter-layout-default .zo-counter-inner .zo-counter-body .zo-counter-title{ font-size: 10px!important;}
+.zo-counter-layout-default .zo-counter-inner .zo-icon {
+	font-size: 20px!important;
+	padding-right: 5px;
+	color: #7bbb05!important;
+}
+.zo-counter-layout-default .zo-counter-inner .zo-counter-body{ padding-left: 0px!important; }
+
+/*Fancybox*/
+
+.template-zo_fancybox--style-1 .zo-fancybox-item .zo-fancybox-inner .zo-fancybox-icon{
+	width: 55px!important;
+	border: 0px!important;
+	border-right: 2px solid #7bbb05!important;
+	border-radius: 0px!important;
+	padding-right: 10px;
+}
