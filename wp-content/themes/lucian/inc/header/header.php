@@ -33,16 +33,16 @@
 } ?>">
     <div class="container-fluid">
         <div class="row">
-            <div id="zo-header-logo" class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <div id="zo-header-logo" class="col-xs-12 [ text-center ][ margin-bottom ]">
 	            <?php if( isset($smof_data['sticky_logo_enable']) || !empty($zo_meta->_zo_sticky_logo_enable) ) : ?>
 	            <a class="sticky-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img alt="" src="<?php echo esc_url(zo_page_header_sticky_logo()); ?>"></a>
 	            <?php endif; ?>
                 <a class="main-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img alt="" src="<?php echo esc_url(zo_page_header_logo()); ?>"></a>
             </div>
             <?php if (is_active_sidebar('header-right')): ?>
-            <div id="zo-header-navigation" class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <div id="zo-header-navigation" class="col-xs-12 [ menu-price-point ]">
             <?php else : ?>
-            <div id="zo-header-navigation" class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+            <div id="zo-header-navigation" class="col-xs-12 [ menu-price-point ]">
             <?php endif; ?>
                 <nav id="site-navigation" class="main-navigation">
                     <?php
