@@ -33,7 +33,7 @@
 } ?>">
     <div class="container-fluid">
         <div class="row">
-            <div id="zo-header-logo" class="col-xs-12 [ text-center ][ margin-bottom ]">
+            <div id="zo-header-logo" class="col-xs-12 [ text-center ]">
 	            <?php if( isset($smof_data['sticky_logo_enable']) || !empty($zo_meta->_zo_sticky_logo_enable) ) : ?>
 	            <a class="sticky-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img alt="" src="<?php echo esc_url(zo_page_header_sticky_logo()); ?>"></a>
 	            <?php endif; ?>
