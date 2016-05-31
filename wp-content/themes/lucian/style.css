@@ -115,3 +115,5 @@ header .zo-main-header .container-fluid{
 
 /*Footer*/
 footer .edit-link { display: none; }
+footer .zo-social.default { text-align: right!important;}
+.widget_zo_social_widget .zo-social.default{ border-bottom: none!important;}
