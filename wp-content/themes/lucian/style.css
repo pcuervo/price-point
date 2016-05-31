@@ -15,17 +15,46 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 /*Padding*/
+.no-padding-bottom { padding-bottom: 0px; }
+
+.no-padding-right { padding-right: 0px; }
+.padding-right { padding-right: 15px; }
+.padding-right--large { padding-right: 30px; }
+.padding-right--xlarge { padding-right: 45px; }
+.padding-right--xxlarge { padding-right: 60px; }
+.padding-right--xxxlarge { padding-right: 75px; }
+
+.no-padding-left { padding-left: 0px; }
+.padding-left { padding-left: 15px; }
+.padding-left--large { padding-left: 30px; }
+.padding-left--xlarge { padding-left: 45px; }
+.padding-left--xxlarge { padding-left: 60px; }
+.padding-left--xxxlarge { padding-left: 75px; }
+
+.padding-sides { padding-left: 15px!important; padding-right: 15px!important; }
 
 /*Margin*/
 .margin-bottom { margin-bottom: 20px; }
 
+.margin-top { margin-top: 20px; }
+.margin-top--large { margin-top: 35px; }
+.margin-top--xlarge { margin-top: 50px; }
+.margin-top--xl { margin-top: 70px; }
+
 
 /*Display*/
 .hidden { display: none; }
+@media (max-width: 767px){.hidden--xs--767 { display: none; }}
+@media (min-width: 768px){.hidden--sm--768 { display: none; }}
+@media (max-width: 991px){.hidden--991 { display: none; }}
+@media (max-width: 1199px){.hidden--xs--1199 { display: none; }}
+@media (min-width: 1200px){.hidden--sm--1200 { display: none; }}
 
 /*Width*/
 
 @media (min-width: 768px){ .vc_col-sm-2.width--20 { width: 20%; } }
+@media (min-width: 768px){ .vc_col-sm-2.width--100--768 { width: 100%; } }
+@media (min-width: 1200px){ .vc_col-sm-2.width--20--1200 { width: 20%; } }
 
 /*Text align*/
 
@@ -33,7 +62,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /*Testimonial*/
 
-.zo-grid-testimonial .zo-testimonial-inner { border: none!important;}
+.zo-grid-testimonial .zo-testimonial-inner {
+	border: none!important;
+	padding: 20px 20px 0px!important;
+	margin-bottom: 0px!important;
+}
 
 /*Counter*/
 .vc_column_container.no-padding--right-col>.vc_column-inner{ padding-right: 0px!important;}
@@ -63,6 +96,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .template-zo_fancybox--style-1.border-right--primary .zo-fancybox-item .zo-fancybox-inner .zo-fancybox-icon {
 	border-right: 2px solid #7bbb05!important;
 }
+
+.template-zo_fancybox_single--style-12 .zo-fancybox-inner .zo-fancybox-icon { border: none!important;}
+.template-zo_fancybox_single--style-12 .zo-fancybox-inner .zo-fancybox-title{ text-transform: capitalize!important;}
 
 /*Header*/
 
