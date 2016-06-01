@@ -152,7 +152,10 @@ header .zo-main-header .container-fluid{
 
 #zo-header-logo .sticky-logo img{ margin-top: 10px!important;}
 
-@media (max-width: 991px){ #zo-header-logo  { text-align: left!important;} }
+@media (max-width: 991px){
+	#zo-header-logo { text-align: left!important;}
+	#zo-header .container-fluid { padding-bottom: 10px;}
+}
 
 /*Footer*/
 footer .edit-link { display: none; }
