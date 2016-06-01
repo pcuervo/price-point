@@ -136,7 +136,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .template-zo_fancybox_single--style-12 .zo-fancybox-inner .zo-fancybox-title{ text-transform: capitalize!important;}
 
 /*Header*/
-
+#zo-header-navigation .main-navigation .menu-main-menu > li { line-height: 40px!important; }
 #zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li.current-menu-item > a { border: none!important; }
 #zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li > a {
 	padding-bottom: 0px!important;
