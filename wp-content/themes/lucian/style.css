@@ -148,7 +148,15 @@ header .zo-main-header .container-fluid{
 	background-color: #fff;
 }
 
+#zo-header-logo .sticky-logo img{ margin-top: 10px!important;}
+
 /*Footer*/
 footer .edit-link { display: none; }
-footer .zo-social.default { text-align: right!important;}
+footer .zo-social.default {
+	margin: 0px!important;
+	padding: 5px 0px 0px!important;
+}
+@media screen and (min-width: 992px){footer .zo-social.default{ text-align: right!important; }}
+footer h3 { margin: 6px 0px 0px; }
 .widget_zo_social_widget .zo-social.default{ border-bottom: none!important;}
+@media screen and (max-width: 991px){#zo-footer-top [class^="col-"]{ margin-bottom: 10px!important; }}
