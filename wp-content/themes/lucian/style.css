@@ -35,6 +35,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .padding-sides { padding-left: 15px!important; padding-right: 15px!important; }
 
+.compose-mode .vc_vc_row_inner.no-padding-top{ padding-top: 0px;}
+
 /*Margin*/
 .no-margin-bottom { margin-bottom: 0px; }
 .margin-bottom { margin-bottom: 20px; }
