@@ -36,6 +36,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .padding-sides { padding-left: 15px!important; padding-right: 15px!important; }
 
 /*Margin*/
+.no-margin-bottom { margin-bottom: 0px; }
 .margin-bottom { margin-bottom: 20px; }
 
 .margin-top { margin-top: 20px; }
@@ -97,6 +98,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .text-center { text-align: center; }
 
+/*Icons*/
+
+.vc_icon_element{ margin-bottom: 0px!important;}
+
 /*Testimonial*/
 
 .zo-grid-testimonial .zo-testimonial-inner {
@@ -155,7 +160,13 @@ header .zo-main-header .container-fluid{
 @media (max-width: 991px){
 	#zo-header-logo { text-align: left!important;}
 	#zo-header .container-fluid { padding-bottom: 10px;}
+	#zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li > a{ margin-bottom: 0px!important; margin-right: 0px!important; letter-spacing: 1px; }
 }
+
+@media (min-width: 992px){
+	#zo-header-navigation .main-navigation .menu-main-menu > li.current_page_item > a{ color: #1784cb!important; }
+}
+
 
 /*Footer*/
 footer .edit-link { display: none; }
@@ -167,3 +178,12 @@ footer .zo-social.default {
 footer h3 { margin: 6px 0px 0px; }
 .widget_zo_social_widget .zo-social.default{ border-bottom: none!important;}
 @media screen and (max-width: 991px){#zo-footer-top [class^="col-"]{ margin-bottom: 10px!important; }}
+
+/*Img-header*/
+@media (max-width: 768px){
+	#img-header h2 { font-size: 28px!important; }
+	#img-header h3 { font-size: 22px!important; }
+}
+
+/*Tuerca de estilo*/
+.style-toggle { display: none; }
