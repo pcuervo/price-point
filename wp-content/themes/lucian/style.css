@@ -56,17 +56,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @media (max-width: 1199px){.hidden--xs--1199 { display: none; }}
 @media (min-width: 1200px){.hidden--sm--1200 { display: none; }}
 
-/*Background*/
-
-@media (max-width: 767px){.background-functionality { background-image: none;!important; }}
-@media (min-width: 768px){.background-functionality {
-	background-image: url(images/functionality.png) !important;
-	background-position: center !important;
-	background-repeat: no-repeat !important;
-	background-size: cover !important;
-	}
-}
-
 /*Width*/
 
 @media (min-width: 332px) and (max-width: 767px){ .vc_col-sm-2.width--60--767 {
