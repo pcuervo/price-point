@@ -46,6 +46,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .margin-top--xlarge { margin-top: 50px; }
 .margin-top--xl { margin-top: 70px; }
 
+@media (min-width: 768px){.margin-top--sm { margin-top: 20px!important; }}
+
 /*Border*/
 
 
@@ -149,15 +151,27 @@ header .zo-main-header .container-fluid{
 #zo-header-logo .sticky-logo img{ margin-top: 10px!important;}
 
 @media (max-width: 991px){
+	body div#zo-header { margin-top: 0px!important; }
+}
+
+@media (max-width: 991px){
 	#zo-header-logo { text-align: left!important;}
 	#zo-header .container-fluid { padding-bottom: 10px;}
 	#zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li > a{ margin-bottom: 0px!important; margin-right: 0px!important; letter-spacing: 1px; }
+	#zo-menu-mobile i:hover,
+	#zo-header-navigation.collapse{ background:  #7bbb05!important; margin-top: 10px;}
+	#zo-header #zo-header-navigation .main-navigation .menu-main-menu li a{ color: #fff!important; letter-spacing: 2px; }
 }
 
 @media (min-width: 992px){
-	#zo-header-navigation .main-navigation .menu-main-menu > li.current_page_item > a{ color: #1784cb!important; }
+	#zo-header-navigation .main-navigation .menu-main-menu > li.current_page_item > a{ color: #7bbb05!important; }
+	#zo-header-navigation .main-navigation .menu-main-menu > li.current_page_item > a:hover{ color: #1784cb!important; }
+	#zo-header-logo{ padding-left: 15px; }
 }
 
+@media (min-width: 992px) and (max-width: 1200px) {
+	#zo-header-navigation .main-navigation .menu-main-menu > li > a { font-size: 13px!important; }
+}
 
 /*Footer*/
 footer .edit-link { display: none; }
