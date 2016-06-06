@@ -97,7 +97,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .vc_icon_element{ margin-bottom: 0px!important;}
 
-.contact-us .vc_icon_element-link:hover { color: #7bbb05; }
+// .vc_icon_element.vc_icon_element-outer .vc_icon_element-inner:hover {
+// 	border: 4px solid #7bbb05;
+// 	border-radius: 50%;
+// }
 
 /*Testimonial*/
 
@@ -203,6 +206,11 @@ header .zo-main-header .container-fluid{
 
 .header-fixed #zo-header-navigation.collapse { top: 90px; }
 
+@media screen and (min-width: 992px){
+	#zo-header #zo-header-navigation{
+		padding-right: 69px!important;
+	}
+}
 /*Footer*/
 footer .edit-link { display: none; }
 footer .zo-social.default {
