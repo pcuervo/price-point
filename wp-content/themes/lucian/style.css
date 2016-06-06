@@ -43,8 +43,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .margin-top { margin-top: 20px; }
 .margin-top--large { margin-top: 35px; }
+.margin-top---large { margin-top: 45px; }
 .margin-top--xlarge { margin-top: 50px; }
 .margin-top--xl { margin-top: 70px; }
+.margin-top--xxl { margin-top: 105px; }
 
 @media (min-width: 768px){.margin-top--sm { margin-top: 20px!important; }}
 
@@ -95,13 +97,18 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .vc_icon_element{ margin-bottom: 0px!important;}
 
+.contact-us .vc_icon_element-link:hover { color: #7bbb05; }
+
 /*Testimonial*/
 
 .zo-grid-testimonial .zo-testimonial-inner {
 	border: none!important;
 	padding: 20px 20px 0px!important;
 	margin-bottom: 0px!important;
+	color: #fff;
 }
+
+.zo-grid-testimonial .zo-testimonial-inner .zo-testimonial-title { color: #fff;}
 
 /*Counter*/
 .vc_column_container.no-padding--right-col>.vc_column-inner{ padding-right: 0px!important;}
@@ -135,13 +142,28 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .template-zo_fancybox_single--style-12 .zo-fancybox-inner .zo-fancybox-icon { border: none!important;}
 .template-zo_fancybox_single--style-12 .zo-fancybox-inner .zo-fancybox-title{ text-transform: capitalize!important;}
 
+/*Map*/
+
+.wpb_gmaps_widget .wpb_wrapper { padding: 0px!important; }
+
+/*Form contact*/
+
+input[type="submit"]{
+	background-color: #7bbb05!important;
+	color: #fff!important;
+	border: none!important;
+}
+
+.wpcf7-form .wpcf7-validation-errors{ color: #7bbb05!important; }
+
 /*Header*/
+#zo-header-navigation .main-navigation .menu-main-menu, #zo-header-navigation .main-navigation div.nav-menu > ul{ float: ri }
 #zo-header-navigation .main-navigation .menu-main-menu > li { line-height: 40px!important; }
 #zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li.current-menu-item > a { border: none!important; }
 #zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li > a {
-	padding-bottom: 0px!important;
+	padding: 0px!important;
 	text-transform: none!important;
-	margin-bottom: 20px!important;
+	margin-bottom: 0px!important;
 	margin-right: 15px!important;
 }
 header .zo-main-header .container-fluid{
@@ -164,14 +186,22 @@ header .zo-main-header .container-fluid{
 }
 
 @media (min-width: 992px){
+	#zo-header-navigation .main-navigation .menu-main-menu, #zo-header-navigation .main-navigation div.nav-menu > ul{ float: right; }
 	#zo-header-navigation .main-navigation .menu-main-menu > li.current_page_item > a{ color: #7bbb05!important; }
 	#zo-header-navigation .main-navigation .menu-main-menu > li.current_page_item > a:hover{ color: #1784cb!important; }
-	#zo-header-logo{ padding-left: 15px; }
+	#zo-header-logo{ margin-bottom: 10px; padding-left: 15px; }
+	#zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li > a {
+	padding: 30px 0px!important;
+	margin-bottom: 0px!important;
+	}
+	.header-fixed #zo-header-navigation .main-navigation .menu-main-menu{ margin-top: 10px; }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
 	#zo-header-navigation .main-navigation .menu-main-menu > li > a { font-size: 13px!important; }
 }
+
+.header-fixed #zo-header-navigation.collapse { top: 90px; }
 
 /*Footer*/
 footer .edit-link { display: none; }
@@ -184,6 +214,13 @@ footer h3 { margin: 6px 0px 0px; }
 .widget_zo_social_widget .zo-social.default{ border-bottom: none!important;}
 @media screen and (max-width: 991px){#zo-footer-top [class^="col-"]{ margin-bottom: 10px!important; }}
 
+#zo-footer-top h3,
+#zo-footer-top h3 + a {
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
 /*Img-header*/
 @media (max-width: 768px){
 	#img-header h2 { font-size: 28px!important; }
@@ -192,3 +229,8 @@ footer h3 { margin: 6px 0px 0px; }
 
 /*Tuerca de estilo*/
 .style-toggle { display: none; }
+
+/*font-family*/
+body{
+	font-family: "Open Sans", Sans-serif!important;
+}
