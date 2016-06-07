@@ -16,8 +16,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /*Padding*/
 .no-padding-bottom { padding-bottom: 0px; }
-
-
+.padding-bottom--large { padding-bottom: 50px; }
 
 .no-padding-right { padding-right: 0px; }
 .padding-right { padding-right: 15px; }
@@ -39,6 +38,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /*Margin*/
 .no-margin-bottom { margin-bottom: 0px; }
+.template-zo_fancybox--style-1.no-margin-bottom .zo-fancybox-item:last-child { margin-bottom: 0px!important; }
 .margin-bottom { margin-bottom: 20px; }
 
 .margin-top { margin-top: 20px; }
@@ -155,9 +155,15 @@ input[type="submit"]{
 	background-color: #7bbb05!important;
 	color: #fff!important;
 	border: none!important;
+	border-radius: 5px!important;
 }
+input[type="submit"]:hover{ background-color: #1784cb!important; }
 
 .wpcf7-form .wpcf7-validation-errors{ color: #7bbb05!important; }
+
+.wpcf7-form input[type='text'],
+.wpcf7-form input[type="email"],
+.wpcf7-form textarea{ background-color: #fff!important; }
 
 /*Header*/
 #zo-header-navigation .main-navigation .menu-main-menu, #zo-header-navigation .main-navigation div.nav-menu > ul{ float: ri }
@@ -169,6 +175,7 @@ input[type="submit"]{
 	margin-bottom: 0px!important;
 	margin-right: 15px!important;
 }
+#zo-header-navigation { padding-right: 0px!important; }
 header .zo-main-header .container-fluid{
 	background-color: #fff;
 }
@@ -206,11 +213,9 @@ header .zo-main-header .container-fluid{
 
 .header-fixed #zo-header-navigation.collapse { top: 90px; }
 
-@media screen and (min-width: 992px){
-	#zo-header #zo-header-navigation{
-		padding-right: 69px!important;
-	}
-}
+header .container-fluid { padding-left: 0px; padding-right: 0px; }
+@media screen and (min-width: 992px){ #zo-header-logo { padding-left: 0px!important; }}
+
 /*Footer*/
 footer .edit-link { display: none; }
 footer .zo-social.default {
