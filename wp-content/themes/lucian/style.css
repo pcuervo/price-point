@@ -214,7 +214,7 @@ header .zo-main-header .container-fluid{
 .header-fixed #zo-header-navigation.collapse { top: 90px; }
 
 header .container-fluid { padding-left: 0px; padding-right: 0px; }
-@media screen and (min-width: 992px){ #zo-header-logo { padding-left: 0px!important; }}
+@media screen and (min-width: 992px){ #zo-header-logo { padding-left: 15px!important; }}
 
 /*Footer*/
 footer .edit-link { display: none; }
