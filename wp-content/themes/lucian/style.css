@@ -52,10 +52,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @media (min-width: 768px){.margin-top--sm { margin-top: 20px!important; }}
 
-/*Border*/
-
-
-
 /*Display*/
 .hidden { display: none; }
 @media (max-width: 767px){.hidden--xs--767 { display: none; }}
