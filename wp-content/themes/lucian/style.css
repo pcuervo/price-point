@@ -133,6 +133,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 .zo-counter-layout-default .zo-counter-inner .zo-counter-body{ padding-left: 0px!important; }
 
+.zo-counter-layout-default .zo-counter-inner .zo-counter-body { width: 100%!important; float: inherit;!important; }
+
 /*Fancybox*/
 
 .template-zo_fancybox--style-1 .zo-fancybox-item .zo-fancybox-inner .zo-fancybox-icon{
