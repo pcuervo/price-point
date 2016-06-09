@@ -8,7 +8,6 @@ Template Name: pinnacle_premium
 	$pdf = get_fact_sheet_pdf( $_GET['fspdfid']  );
 ?>
 <?php get_header(); ?>
-<?php get_template_part('templates/page', 'header'); ?>
 	<div class="[ container ][ margin-top--xxl ]">
 		<div class="[ row ]">
 			<div class="[ wpb_column vc_column_container vc_col-sm-4 ]"></div>
