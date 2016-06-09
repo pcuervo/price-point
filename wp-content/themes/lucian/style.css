@@ -40,6 +40,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .no-margin-bottom { margin-bottom: 0px; }
 .template-zo_fancybox--style-1.no-margin-bottom .zo-fancybox-item:last-child { margin-bottom: 0px!important; }
 .margin-bottom { margin-bottom: 20px; }
+.margin-bottom--large { margin-bottom: 40px; }
 
 .margin-top { margin-top: 20px; }
 .margin-top--large { margin-top: 35px; }
@@ -51,6 +52,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .margin-right---1 { margin-right: 1%; }
 
 @media (min-width: 768px){.margin-top--sm { margin-top: 20px!important; }}
+
+.margin-auto { margin: auto; }
 
 /*Display*/
 .hidden { display: none; }
