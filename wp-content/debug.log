@@ -1,2 +1,10 @@
-[09-Jun-2016 17:41:19 UTC] PHP Notice:  Trying to get property of non-object in /Users/micho/Documents/cuervo/sitios/price-point/wp-content/themes/lucian/vc_templates/zo_grid--testimonial.php on line 54
-[09-Jun-2016 17:47:31 UTC] PHP Notice:  Trying to get property of non-object in /Users/micho/Documents/cuervo/sitios/price-point/wp-content/themes/lucian/vc_templates/zo_grid--testimonial.php on line 54
+[09-Jun-2016 21:25:34 UTC] PHP Fatal error:  Call to undefined function zo_page_class() in /Users/micho/Documents/cuervo/sitios/price-point/wp-content/themes/lucian/header-404.php on line 23
+[09-Jun-2016 21:25:40 UTC] PHP Fatal error:  Call to undefined function zo_page_class() in /Users/micho/Documents/cuervo/sitios/price-point/wp-content/themes/lucian/header-404.php on line 23
+[09-Jun-2016 21:26:55 UTC] PHP Fatal error:  Call to undefined function zo_page_class() in /Users/micho/Documents/cuervo/sitios/price-point/wp-content/themes/lucian/header-404.php on line 23
+[09-Jun-2016 21:27:30 UTC] PHP Fatal error:  Call to undefined function zo_page_class() in /Users/micho/Documents/cuervo/sitios/price-point/wp-content/themes/lucian/header-404.php on line 23
+[09-Jun-2016 21:27:40 UTC] PHP Fatal error:  Call to undefined function get_fact_sheet_download_email_body() in /Users/micho/Documents/cuervo/sitios/price-point/wp-content/themes/lucian/functions.php on line 1049
+[09-Jun-2016 21:28:44 UTC] PHP Fatal error:  Call to undefined function zo_page_class() in /Users/micho/Documents/cuervo/sitios/price-point/wp-content/themes/lucian/header-404.php on line 23
+[09-Jun-2016 21:28:53 UTC] PHP Fatal error:  Call to undefined function get_fact_sheet_download_email_body() in /Users/micho/Documents/cuervo/sitios/price-point/wp-content/themes/lucian/functions.php on line 1049
+[09-Jun-2016 21:29:17 UTC] PHP Fatal error:  Call to undefined function get_fact_sheet_download_email_body() in /Users/micho/Documents/cuervo/sitios/price-point/wp-content/themes/lucian/functions.php on line 1049
+[09-Jun-2016 21:30:10 UTC] PHP Notice:  Undefined variable: name in /Users/micho/Documents/cuervo/sitios/price-point/wp-content/themes/lucian/functions.php on line 1039
+[09-Jun-2016 21:30:22 UTC] PHP Notice:  Undefined variable: name in /Users/micho/Documents/cuervo/sitios/price-point/wp-content/themes/lucian/functions.php on line 1041

@@ -1,2 +1,0 @@
-[09-Jun-2016 17:38:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/micho/Documents/cuervo/sitios/price-point/wp-admin/theme-install.php on line 31
-[09-Jun-2016 17:38:04 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, boolean given in /Users/micho/Documents/cuervo/sitios/price-point/wp-admin/theme-install.php on line 57
