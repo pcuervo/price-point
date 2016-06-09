@@ -3,7 +3,7 @@
 	<section class="[ container ][ margin-top--xxl ]" id="fact_sheet">
 		<div class="[ row ]">
 			<div class="[ wpb_column vc_column_container vc_col-sm-12 ][ margin-bottom--large ]">
-				<p>Download our fact sheet to learn more about what Price Point can do for your organization.</p>
+				<p class="[ text-center ]">Download our fact sheet to learn more about what Price Point can do for your organization.</p>
 			</div>
 			<div class="[ clearfix ]"></div>
 			<?php $fact_sheets = get_fact_sheets(); ?>
