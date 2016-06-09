@@ -20,7 +20,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'price-point');
+define('DB_NAME', 'price_point');
 
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -77,7 +77,9 @@ $table_prefix  = 'pp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
+define( 'WP_DEBUG_DISPLAY', true );
 
 /* That's all, stop editing! Happy blogging. */
 
