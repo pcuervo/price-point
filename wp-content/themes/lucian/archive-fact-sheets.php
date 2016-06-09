@@ -9,7 +9,7 @@
 			<?php $fact_sheets = get_fact_sheets(); ?>
 			<?php foreach ( $fact_sheets as $key => $paper ) :?>
 				<div class="[ wpb_column vc_column_container vc_col-sm-4 ][ text-center ][ margin-auto ]">
-					<a href="<?php echo site_url('fact-sheet-download'); ?>/?fspdfid=<?php echo $paper['id'] ?>">
+					<a href="<?php echo site_url( 'fact-sheets-download' ); ?>/?fspdfid=<?php echo $paper['id'] ?>">
 						<img class="[ block ]" src="<?php echo THEMEPATH; ?>images/pdf.jpg" alt="image pdf">
 						<br>
 						<?php echo $paper['title']; ?>

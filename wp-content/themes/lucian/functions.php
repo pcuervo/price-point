@@ -241,11 +241,13 @@ function zo_scripts_styles() {
 	}
 	/*------------------------------------- JavaScript ---------------------------------------*/
 
+	//wp_localize_script( 'functions', 'ajax_url', admin_url('admin-ajax.php') );
 
 	/** --------------------------libs--------------------------------- */
 
 	/* Adds JavaScript Bootstrap. */
 	wp_enqueue_script('zotheme-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ), '3.3.2');
+	wp_enqueue_script( 'functions', get_template_directory_uri() . '/assets/js/' .'functions.js', array('jquery'), '1.0', true );
 
 	/* Add parallax plugin. */
 	if($smof_data['parallax']){
@@ -872,3 +874,212 @@ if( function_exists('zo_image_resize')) {
         return do_shortcode('<img src="'.esc_url($url).'" alt="' . get_the_title() . '" />');
     }
 }
+
+// CUERVO STARTS HERE
+
+/*------------------------------------*\
+	#CONSTANTS
+\*------------------------------------*/
+
+define( 'THEMEPATH', get_template_directory_uri() . '/' );
+
+/*------------------------------------*\
+	#INCLUDES
+\*------------------------------------*/
+
+require_once('inc/post-types.php');
+require_once('inc/pages.php');
+
+
+/*------------------------------------*\
+	#GENERAL FUNCTIONS
+\*------------------------------------*/
+
+/**
+ * Send email to admin when someone request to download a white paper.
+ * @return JSON $message - A success/error message about the status of the post.
+*/
+function notify_admin_fact_sheet_download( $name, $position, $company, $pdf_title ){
+
+	// require_once('inc/phpmailer/class.phpmailer.php');
+
+	$mail      	= new PHPMailer(); // defaults to using php "mail()"
+	$body       = get_fact_sheets_admin_email_body( $name, $position, $company, $pdf_title );
+	$reply_to	= 'info@fwpr.com';
+	$name_to	= 'FusionWorks';
+
+	$mail->AddReplyTo( $reply_to, $name_to );
+	$mail->SetFrom( $reply_to, $name_to );
+	$mail->AddReplyTo( $reply_to, $name_to );
+
+	$address = 'info@fwpr.com';
+	$mail->AddAddress( $address, $name );
+	$mail->Subject = $name . " has downloaded a white paper.";
+	$mail->MsgHTML( $body );
+
+
+}// notify_admin_fact_sheet_download
+
+
+/*------------------------------------*\
+	#GET / SET
+\*------------------------------------*/
+
+/**
+* Get all posts from post type Fact Sheets
+* @return array $fact_sheets
+**/
+function get_fact_sheets(){
+	global $post;
+	$fact_sheets = array();
+	$fact_sheets_args = array(
+		'post_type' 		=> 'fact-sheets',
+		'posts_per_page' 	=> -1,
+	);
+	$query_fact_sheets = new WP_Query( $fact_sheets_args );
+
+	if ( $query_fact_sheets->have_posts() ) : while( $query_fact_sheets->have_posts() ) : $query_fact_sheets->the_post();
+		// $img_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+		$fact_sheets[$post->post_name] = array(
+			'id'		=> $post->ID,
+			'title'		=> $post->post_title,
+			'content'	=> $post->post_content,
+		);
+	endwhile; endif; wp_reset_query();
+
+	return $fact_sheets;
+}
+
+/**
+* Get PDFs from post of type White Papers
+* @param int $post_id
+* @return array $pdf
+**/
+function get_fact_sheets_pdf( $post_id ){
+	$pdf = array();
+	$query_pdf_args = array(
+		'post_parent'		=> $post_id,
+		'post_status' 		=> 'inherit',
+		'post_type'			=> 'attachment',
+		'post_mime_type' 	=> 'application/pdf',
+		'post_per_page'		=> 1,
+	);
+	$query_pdf = new WP_Query( $query_pdf_args );
+	foreach ( $query_pdf->posts as $file) {
+		$pdf = array(
+			'title'		=> get_the_title( $post_id ),
+			'pdf_title'	=> $file->post_title,
+			'url' 		=> $file->guid
+		);
+	}
+	return $pdf;
+}// get_fact_sheets_pdf
+
+
+/**
+* Get HTML body for email
+* @param string $name
+* @return HTML $body
+**/
+function get_fact_sheet_download_email_body( $name, $pdf_title ){
+	$body = <<<EOT
+		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+		<html>
+			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+				<title>Download PDF</title>
+			</head>
+		<body style="font-family: Verdana">
+			<table style="width: 100%">
+				<tr style="background-color: #f74c02; color: #fff; ">
+					<td>
+						<h1 style="text-align: center;color: #fff">PricePoint Fact Sheet</h1>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p style="color: #5C5B5B;font-size: 15px">Hi <strong>$name</strong>!</p>
+						<p style="color: #5C5B5B;font-size: 15px">Thank you for your interest in our white papers.</p>
+						<p style="color: #5C5B5B;font-size: 15px">You will find attached a copy of the white paper you requested.</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p style="color: #5C5B5B;font-size: 15px">White Paper: <span>$pdf_title</span></p>
+					</td>
+				</tr>
+				<tr style="text-align: center;">
+					<td>
+						<a href="http://pcuervo.com/fusion-works">
+							<img src="http://pcuervo.com/fusion-works/wp-content/uploads/2016/05/Logo-Fusion-Works.png" alt="Logo FusionWorks" style="width: 200px; display: block; margin: auto;"/>
+						</a>
+						<p style="display: inline-block;margin-bottom: 8px;margin-right: 10px;font-size: 12px;color: #5C5B5B">View more <a href="http://pcuervo.com/fusion-works/white-papers/" style="color: #f74c02;text-decoration: none;font-size: 12px">White papers</a></p>
+						<p style="display: inline-block;margin-bottom: 8px;font-size: 12px;color: #5C5B5B">Go to <a href="http://pcuervo.com/fusion-works" style="color: #f74c02;text-decoration: none;font-size: 12px">Fusionworks</a></p>
+					</td>
+				</tr>
+			</table>
+		</body>
+	</html>
+EOT;
+	return $body;
+}// get_fact_sheet_download_email_body
+
+/*------------------------------------*\
+	#AJAX RESPONSE FUNCTIONS
+\*------------------------------------*/
+
+/**
+ * Send email for "more information"
+ * @return JSON $message - A success/error message about the status of the post.
+*/
+function send_pdf_by_email(){
+
+	require_once('inc/phpmailer/class.phpmailer.php');
+
+	$name 		= $_POST['name'];
+	$email 		= $_POST['email'];
+	$pdf_url	= $_POST['pdf_url'];
+	$pdf_title	= $_POST['pdf_title'];
+	$reply_to	= 'info@fwpr.com';
+	$name_to	= 'Fusionworks';
+	$position 	= isset( $_POST['position'] ) ? $_POST['position'] : '';
+	$company 	= isset( $_POST['company'] ) ? $_POST['company'] : '';
+
+	$mail      	= new PHPMailer(); // defaults to using php "mail()"
+	$body       = get_fact_sheet_download_email_body( $name, $pdf_title  );
+	//$body       = preg_replace("[\]",'',$body);
+
+	$mail->AddReplyTo( $reply_to, $name_to );
+	$mail->SetFrom( $reply_to, $name_to );
+	$mail->AddReplyTo( $reply_to, $name_to );
+
+	$address = $email;
+	$mail->AddAddress( $address, $name );
+	$mail->Subject = "PricePoint Fact Sheet";
+	$mail->MsgHTML( $body );
+
+	$upload_dir = wp_upload_dir();
+	$pdf_url_arr = explode( 'uploads/', $pdf_url );
+	$attachment = $mail->addAttachment( $upload_dir['basedir'] . '/' . $pdf_url_arr[1] );
+
+	//notify_admin_fact_sheet_download( $name, $position, $company, $pdf_title );
+
+	if( !$mail->Send() ) {
+		error_log( $mail->ErrorInfo );
+		$message = array(
+			'error'		=> 1,
+			'message'	=> 'An error has occurred. Please try again later.',
+		);
+	} else {
+		$message = array(
+			'error'		=> 0,
+			'message'	=> 'Thanks ' . $name .'!',
+		);
+	}
+
+	echo json_encode($message , JSON_FORCE_OBJECT);
+	exit();
+
+}// send_pdf_by_email
+add_action("wp_ajax_send_pdf_by_email", "send_pdf_by_email");
+add_action("wp_ajax_nopriv_send_pdf_by_email", "send_pdf_by_email");
