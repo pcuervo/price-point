@@ -41,6 +41,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .template-zo_fancybox--style-1.no-margin-bottom .zo-fancybox-item:last-child { margin-bottom: 0px!important; }
 .margin-bottom { margin-bottom: 20px; }
 .margin-bottom--large { margin-bottom: 40px; }
+.margin-bottom--xlarge { margin-bottom: 60px; }
+.margin-bottom--xxlarge { margin-bottom: 120px; }
+.margin-bottom--xxxlarge { margin-bottom: 140px; }
 
 .margin-top { margin-top: 20px; }
 .margin-top--large { margin-top: 35px; }
@@ -78,6 +81,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @media (min-width: 768px){ .vc_col-sm-2.width--100--768 { width: 100%; } }
 @media (min-width: 1200px){ .vc_col-sm-2.width--20--1200 { width: 20%; } }
 @media (max-width: 1200px){ .width--100--1200 .zo-icon { width: 1000%; } }
+
+/*Color*/
+
+.color-primary { color: #7bbb05; }
+.color-secondary { color: #1784cb; }
 
 /*Columns*/
 
@@ -233,7 +241,13 @@ header .zo-main-header .container-fluid{
 .header-fixed #zo-header-navigation.collapse { top: 90px; }
 
 header .container-fluid { padding-left: 0px; padding-right: 0px; }
-@media screen and (min-width: 992px){ #zo-header-logo { padding-left: 15px!important; }}
+
+@media screen and (min-width: 992px){
+	#zo-header-logo { padding-left: 15px!important; }
+	#zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li > a { color: #7bbb05; }
+	#zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li > a:hover { color: #1784cb; }
+	#zo-header-navigation .main-navigation .menu-main-menu * { border-bottom: none!important;}
+}
 
 /*Footer*/
 footer .edit-link { display: none; }
@@ -270,3 +284,13 @@ body *:not(.fa, .i){
 /*Link*/
 a.link { color: #1784cb;}
 a.link:hover { color: #7bbb05;}
+
+/*img header*/
+.vc_custom_bg-image{
+	padding-top: 220px !important;
+	padding-bottom: 70px !important;
+	background-image: url(images/img-header.png) !important;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+}

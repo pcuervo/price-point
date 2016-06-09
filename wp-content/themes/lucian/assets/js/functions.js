@@ -26,28 +26,27 @@ function sendPDF( data ){
         data,
         function( response ){
             console.log( response );
-            // $('.js-loader').hide();
-            // var status = $.parseJSON(response)
-            // if ( status.error == 1 ){
+            var status = $.parseJSON(response)
+            if ( status.error == 1 ){
 
-            //     if ( $('.js-form-success').length ){
-            //         $('.js-form-success').remove();
-            //     }
-            //     if ( $('.js-form-error').length ){
-            //         $('.js-form-error').remove();
-            //     }
-            //     $('.testimonial-form-container').after('<h5 class="[ text-center ][ color-primary ][ js-form-error ]">An error has occurred. <br /> Please try again later.</h5>');
+                if ( $('.js-form-success').length ){
+                    $('.js-form-success').remove();
+                }
+                if ( $('.js-form-error').length ){
+                    $('.js-form-error').remove();
+                }
+                $('.testimonial-form-container').after('<h5 class="[ text-center ][ color-primary ][ js-form-error ]">An error has occurred. <br /> Please try again later.</h5>');
 
-            // } else {
-            //     if ( $('.js-form-success').length ){
-            //         $('.js-form-success').remove();
-            //     }
-            //      if ( $('.js-form-error').length ){
-            //         $('.js-form-error').remove();
-            //      }
-            //     $('.testimonial-form-container').after('<div class="[ text-center ][ color-primary ][ js-form-success ]"><h5>Thank you for your interest in our White Paper: Implementing ERP: Best Practices</h5><h5>You will receive our awesome content over email shortly.Get more business insights by following us at:</h5><div class="[ textwidget text-center ]"><p style="display: inline-block; margin-right: 10px; text-align: center;"><a href="http://www.linkedin.com/company/fusionworks?trk=fc_badge" id="kadbtn11" target="_blank" class="kad-btn btn-shortcode kad-btn-primary" style="border-radius: 50%;"><i class="kt-icon-linkedin2"></i></a></p><p style="display: inline-block; margin-right: 10px; text-align: center;"><a href="http://www.facebook.com/pages/San-Juan-Puerto-Rico/Fusionworks-Inc/167798349901765" id="kadbtn53" target="_blank" class="kad-btn btn-shortcode kad-btn-primary" style="border-radius: 50%;"><i class="kt-icon-facebook2"></i></a></p></div></div>');
+            } else {
+                if ( $('.js-form-success').length ){
+                    $('.js-form-success').remove();
+                }
+                 if ( $('.js-form-error').length ){
+                    $('.js-form-error').remove();
+                 }
+                $('.testimonial-form-container').after('<div class="[ text-center ][ color-secondary ][ margin-bottom ][ js-form-success ]"><h5>Thank you for your interest in our Fact Sheets.</h5><h5>You will receive our awesome content over email shortly.Get more business insights by following us at:</h5><div class="[ text-center ]"><p style="display: inline-block; margin-right: 20px; text-align: center;"><a href="http://www.facebook.com/thepricepoint" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></p><p style="display: inline-block; text-align: center;"><a href="https://twitter.com/pricepointpr" target="_blank" ><i class="fa fa-twitter fa-2x"></i></a></p></div></div>');
 
-            // }
+            }
         }
     );
 }
@@ -62,6 +61,6 @@ function isFormValid(){
 
     var company = $('#kt-feedback-post-company').val();
     if( company == '' || typeof company == 'undefined' ) return false;
-    
+
     return true;
 }

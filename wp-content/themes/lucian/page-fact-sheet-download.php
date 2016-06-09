@@ -6,14 +6,28 @@
 	$pdf = get_fact_sheets_pdf( $_GET['fspdfid']  );
 ?>
 <?php get_header(); ?>
-	<div class="[ container ][ margin-top--xxl ]">
+<?php get_template_part('templates/page', 'header'); ?>
+	<div id="img-header" class="vc_row wpb_row vc_custom_bg-image vc_row-has-fill vc_row-fluid [ margin-bottom ]" style="">
+		<div class="container-fluid">
+			<div class="row vc_row ">
+				<div class="wpb_column vc_column_container vc_col-sm-12">
+					<div class="vc_column-inner " style="">
+						<div class="wpb_wrapper">
+							<h2 style="margin-bottom: 40px; font-size: 60px;line-height: 1.3;text-align: center;font-family:Open Sans;font-weight:400;font-style:normal" class="vc_custom_heading vc_custom_1465419667436 default">FACT SHEETS</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="[ container ]">
 		<div class="[ row ]">
-			<div class="[ wpb_column vc_column_container vc_col-sm-4 ]"></div>
-			<div class="[ wpb_column vc_column_container vc_col-sm-4 ]">
+			<div class="[ col-xs-12 col-sm-3 ]"></div>
+			<div class="[ col-xs-12 col-sm-6 ][ margin-bottom ]">
 				<div class="testimonial-form-container">
 					<p class="[ margin-bottom--large ]"><strong>File to download:</strong><span> <?php echo $pdf['title'] ?></span></p>
 					<div>
-						<form class="[ js-fact-sheets-form ]" name="new_post" method="post" enctype="multipart/form-data" novalidate="novalidate">
+						<form class="[ js-fact-sheets-form ][ margin-bottom--large ]" name="new_post" method="post" enctype="multipart/form-data" novalidate="novalidate">
 							<p>
 								<label>Name</label>
 								<input type="text" class="full required requiredField" value="" id="kt-feedback-post-title" name="name">

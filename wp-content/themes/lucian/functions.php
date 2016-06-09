@@ -899,24 +899,24 @@ require_once('inc/pages.php');
  * Send email to admin when someone request to download a white paper.
  * @return JSON $message - A success/error message about the status of the post.
 */
-function notify_admin_fact_sheet_download( $name, $position, $company, $pdf_title ){
+function notify_admin_fact_sheet_download( $name, $email, $position, $company, $pdf_title ){
 
 	// require_once('inc/phpmailer/class.phpmailer.php');
 
 	$mail      	= new PHPMailer(); // defaults to using php "mail()"
-	$body       = get_fact_sheets_admin_email_body( $name, $position, $company, $pdf_title );
-	$reply_to	= 'info@fwpr.com';
-	$name_to	= 'FusionWorks';
+	$body       = get_fact_sheets_admin_email_body( $name, $email, $position, $company, $pdf_title );
+	$reply_to	= 'nayeli@pcuervo.com';
+	$name_to	= 'Price Point';
 
 	$mail->AddReplyTo( $reply_to, $name_to );
 	$mail->SetFrom( $reply_to, $name_to );
 	$mail->AddReplyTo( $reply_to, $name_to );
 
-	$address = 'info@fwpr.com';
+	$address = 'nayeli@pcuervo.com';
 	$mail->AddAddress( $address, $name );
 	$mail->Subject = $name . " has downloaded a white paper.";
 	$mail->MsgHTML( $body );
-
+	$mail->Send();
 
 }// notify_admin_fact_sheet_download
 
@@ -951,7 +951,7 @@ function get_fact_sheets(){
 }
 
 /**
-* Get PDFs from post of type White Papers
+* Get PDFs from post of type Fact sheets
 * @param int $post_id
 * @return array $pdf
 **/
@@ -991,30 +991,30 @@ function get_fact_sheet_download_email_body( $name, $pdf_title ){
 			</head>
 		<body style="font-family: Verdana">
 			<table style="width: 100%">
-				<tr style="background-color: #f74c02; color: #fff; ">
+				<tr style="background-color: #7bbb05; color: #fff; ">
 					<td>
-						<h1 style="text-align: center;color: #fff">PricePoint Fact Sheet</h1>
+						<h1 style="text-align: center;color: #fff">Price Point Fact Sheet</h1>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<p style="color: #5C5B5B;font-size: 15px">Hi <strong>$name</strong>!</p>
-						<p style="color: #5C5B5B;font-size: 15px">Thank you for your interest in our white papers.</p>
-						<p style="color: #5C5B5B;font-size: 15px">You will find attached a copy of the white paper you requested.</p>
+						<p style="color: #5C5B5B;font-size: 15px">Thank you for your interest in our fact sheets.</p>
+						<p style="color: #5C5B5B;font-size: 15px">You will find attached a copy of the fact sheet you requested.</p>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<p style="color: #5C5B5B;font-size: 15px">White Paper: <span>$pdf_title</span></p>
+						<p style="color: #5C5B5B;font-size: 15px">Fact Sheet: <span>$pdf_title</span></p>
 					</td>
 				</tr>
 				<tr style="text-align: center;">
 					<td>
-						<a href="http://pcuervo.com/fusion-works">
-							<img src="http://pcuervo.com/fusion-works/wp-content/uploads/2016/05/Logo-Fusion-Works.png" alt="Logo FusionWorks" style="width: 200px; display: block; margin: auto;"/>
+						<a href="http://pcuervo.com/price-point/">
+							<img src="http://pcuervo.com/price-point/wp-content/uploads/2016/06/PricePoint_Logo.png" alt="Logo Price Point" style="width: 160px; display: block; margin: auto;"/>
 						</a>
-						<p style="display: inline-block;margin-bottom: 8px;margin-right: 10px;font-size: 12px;color: #5C5B5B">View more <a href="http://pcuervo.com/fusion-works/white-papers/" style="color: #f74c02;text-decoration: none;font-size: 12px">White papers</a></p>
-						<p style="display: inline-block;margin-bottom: 8px;font-size: 12px;color: #5C5B5B">Go to <a href="http://pcuervo.com/fusion-works" style="color: #f74c02;text-decoration: none;font-size: 12px">Fusionworks</a></p>
+						<p style="display: inline-block;margin-bottom: 8px;margin-right: 10px;font-size: 12px;color: #5C5B5B">View more <a href="http://pcuervo.com/price-point/fact-sheets/" style="color: #7bbb05;text-decoration: none;font-size: 12px">Facts sheets</a></p>
+						<p style="display: inline-block;margin-bottom: 8px;font-size: 12px;color: #5C5B5B">Go to <a href="http://pcuervo.com/price-point/" style="color: #7bbb05;text-decoration: none;font-size: 12px">Price Point</a></p>
 					</td>
 				</tr>
 			</table>
@@ -1023,6 +1023,36 @@ function get_fact_sheet_download_email_body( $name, $pdf_title ){
 EOT;
 	return $body;
 }// get_fact_sheet_download_email_body
+
+/**
+* Get HTML body for email
+* @param string $name
+* @return HTML $body
+**/
+function get_fact_sheet_admin_email_body( $name, $email, $position, $company, $pdf_title ){
+	$body = <<<EOT
+		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+		<html>
+			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+				<title>Download PDF</title>
+			</head>
+			<body>
+				<div style="width: 640px; font-family: Arial, Helvetica, sans-serif; font-size: 11px;">
+					<h2>Price Point Fact Sheet</h2>
+					<div align="center">
+						<p>Name: $name </p>
+						<p>Email: $email </p>
+						<p>Company: $company</p>
+						<p>Position: $position</p>
+						<p>White paper: $pdf_title</p>
+					</div>
+				</div>
+			</body>
+		</html>
+EOT;
+	return $body;
+}// get_white_paper_admin_email_body
 
 /*------------------------------------*\
 	#AJAX RESPONSE FUNCTIONS
@@ -1040,8 +1070,8 @@ function send_pdf_by_email(){
 	$email 		= $_POST['email'];
 	$pdf_url	= $_POST['pdf_url'];
 	$pdf_title	= $_POST['pdf_title'];
-	$reply_to	= 'info@fwpr.com';
-	$name_to	= 'Fusionworks';
+	$reply_to	= 'nayeli@pcuervo.com';
+	$name_to	= 'Price Point';
 	$position 	= isset( $_POST['position'] ) ? $_POST['position'] : '';
 	$company 	= isset( $_POST['company'] ) ? $_POST['company'] : '';
 
@@ -1055,14 +1085,14 @@ function send_pdf_by_email(){
 
 	$address = $email;
 	$mail->AddAddress( $address, $name );
-	$mail->Subject = "PricePoint Fact Sheet";
+	$mail->Subject = "Price Point Fact Sheet";
 	$mail->MsgHTML( $body );
 
 	$upload_dir = wp_upload_dir();
 	$pdf_url_arr = explode( 'uploads/', $pdf_url );
 	$attachment = $mail->addAttachment( $upload_dir['basedir'] . '/' . $pdf_url_arr[1] );
 
-	//notify_admin_fact_sheet_download( $name, $position, $company, $pdf_title );
+	//notify_admin_fact_sheet_download( $name, $email, $position, $company, $pdf_title );
 
 	if( !$mail->Send() ) {
 		error_log( $mail->ErrorInfo );
