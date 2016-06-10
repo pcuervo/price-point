@@ -904,17 +904,17 @@ function notify_admin_fact_sheet_download( $name, $email, $position, $company, $
 	// require_once('inc/phpmailer/class.phpmailer.php');
 
 	$mail      	= new PHPMailer(); // defaults to using php "mail()"
-	$body       = get_fact_sheets_admin_email_body( $name, $email, $position, $company, $pdf_title );
-	$reply_to	= 'nayeli@pcuervo.com';
+	$body       = get_fact_sheet_admin_email_body( $name, $email, $position, $company, $pdf_title );
+	$reply_to	= 'info@fwpr.com';
 	$name_to	= 'Price Point';
 
 	$mail->AddReplyTo( $reply_to, $name_to );
 	$mail->SetFrom( $reply_to, $name_to );
 	$mail->AddReplyTo( $reply_to, $name_to );
 
-	$address = 'nayeli@pcuervo.com';
+	$address = 'info@fwpr.com';
 	$mail->AddAddress( $address, $name );
-	$mail->Subject = $name . " has downloaded a white paper.";
+	$mail->Subject = $name . " has downloaded a fact sheet.";
 	$mail->MsgHTML( $body );
 	$mail->Send();
 
@@ -1070,7 +1070,7 @@ function send_pdf_by_email(){
 	$email 		= $_POST['email'];
 	$pdf_url	= $_POST['pdf_url'];
 	$pdf_title	= $_POST['pdf_title'];
-	$reply_to	= 'nayeli@pcuervo.com';
+	$reply_to	= 'info@fwpr.com';
 	$name_to	= 'Price Point';
 	$position 	= isset( $_POST['position'] ) ? $_POST['position'] : '';
 	$company 	= isset( $_POST['company'] ) ? $_POST['company'] : '';
@@ -1092,7 +1092,7 @@ function send_pdf_by_email(){
 	$pdf_url_arr = explode( 'uploads/', $pdf_url );
 	$attachment = $mail->addAttachment( $upload_dir['basedir'] . '/' . $pdf_url_arr[1] );
 
-	//notify_admin_fact_sheet_download( $name, $email, $position, $company, $pdf_title );
+	notify_admin_fact_sheet_download( $name, $email, $position, $company, $pdf_title );
 
 	if( !$mail->Send() ) {
 		error_log( $mail->ErrorInfo );

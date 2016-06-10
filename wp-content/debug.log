@@ -134,3 +134,5 @@
 [09-Jun-2016 23:22:53 UTC] PHP Notice:  Trying to get property of non-object in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/vc_templates/zo_grid--testimonial.php on line 54
 [09-Jun-2016 23:28:29 UTC] PHP Notice:  Trying to get property of non-object in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/vc_templates/zo_grid--testimonial.php on line 54
 [09-Jun-2016 23:36:32 UTC] PHP Notice:  Trying to get property of non-object in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/vc_templates/zo_grid--testimonial.php on line 54
+[09-Jun-2016 23:59:24 UTC] PHP Fatal error:  Call to undefined function get_fact_sheets_admin_email_body() in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/functions.php on line 907
+[09-Jun-2016 23:59:39 UTC] PHP Fatal error:  Call to undefined function get_fact_sheets_admin_email_body() in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/functions.php on line 907
