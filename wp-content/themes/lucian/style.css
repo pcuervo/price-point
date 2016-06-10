@@ -79,6 +79,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .color-primary { color: #7bbb05; }
 .color-secondary { color: #1784cb; }
 
+/*Background-color*/
+.background-gray { background-color: #ececec; }
+
 /*Columns*/
 
 @media (min-width: 768px) and (max-width: 991px){ .col-6--center .zo-fancybox-item.col-sm-6 {
@@ -292,4 +295,11 @@ a.link:hover { color: #7bbb05;}
 	background-position: center !important;
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
+}
+
+/*Input*/
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1)!important;
+  border: 1px solid rgba(81, 203, 238, 1)!important;
 }
