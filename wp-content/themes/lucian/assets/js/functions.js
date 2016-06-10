@@ -44,7 +44,7 @@ function sendPDF( data ){
                  if ( $('.js-form-error').length ){
                     $('.js-form-error').remove();
                  }
-                $('.testimonial-form-container').after('<div class="[ text-center ][ color-secondary ][ margin-bottom ][ js-form-success ]"><h5>Thank you for your interest in our Fact Sheets.</h5><h5>You will receive our awesome content over email shortly.Get more business insights by following us at:</h5><div class="[ text-center ]"><p style="display: inline-block; margin-right: 20px; text-align: center;"><a href="http://www.facebook.com/thepricepoint" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></p><p style="display: inline-block; text-align: center;"><a href="https://twitter.com/pricepointpr" target="_blank" ><i class="fa fa-twitter fa-2x"></i></a></p></div></div>');
+                $('.testimonial-form-container').after('<div class="[ text-center ][ color-secondary ][ margin-bottom ][ js-form-success ]"><h5>Thank you for your interest in our Fact Sheets.</h5><h5>You will receive our awesome content over email shortly. Get more business insights by following us at:</h5><div class="[ text-center ]"><p style="display: inline-block; margin-right: 20px; text-align: center;"><a href="http://www.facebook.com/thepricepoint" target="_blank"><i class="fa fa-facebook fa-2x"></i></a></p><p style="display: inline-block; text-align: center;"><a href="https://twitter.com/pricepointpr" target="_blank" ><i class="fa fa-twitter fa-2x"></i></a></p></div></div>');
 
             }
         }
