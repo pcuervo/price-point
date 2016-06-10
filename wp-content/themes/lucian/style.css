@@ -63,7 +63,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .width-49 { width: 49%; }
 .width-50 { width: 50%; }
 
-@media (max-width: 767px){ .width--50--xs { width: 50px;} }
+@media (max-width: 767px){ .width--50--xs { width: 50px!important;} }
 @media (min-width: 332px) and (max-width: 767px){ .vc_col-sm-2.width--60--767 {
 	width: 50%;
 	margin-left: 25%;
@@ -109,7 +109,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
 /*float*/
-@media (max-width: 767px){ .float-left--xs { float: left;} }
+@media (max-width: 767px){ .float-left--xs { float: left!important;} }
 
 /*Text align*/
 
