@@ -896,7 +896,7 @@ require_once('inc/pages.php');
 \*------------------------------------*/
 
 /**
- * Send email to admin when someone request to download a white paper.
+ * Send email to admin when someone request to download a Fact sheet.
  * @return JSON $message - A success/error message about the status of the post.
 */
 function notify_admin_fact_sheet_download( $name, $email, $position, $company, $pdf_title ){
@@ -1045,14 +1045,14 @@ function get_fact_sheet_admin_email_body( $name, $email, $position, $company, $p
 						<p>Email: $email </p>
 						<p>Company: $company</p>
 						<p>Position: $position</p>
-						<p>White paper: $pdf_title</p>
+						<p>Fact sheet: $pdf_title</p>
 					</div>
 				</div>
 			</body>
 		</html>
 EOT;
 	return $body;
-}// get_white_paper_admin_email_body
+}// get_fact_sheet_admin_email_body
 
 /*------------------------------------*\
 	#AJAX RESPONSE FUNCTIONS
