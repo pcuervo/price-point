@@ -58,14 +58,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .margin-auto { margin: auto; }
 
-/*Display*/
-.hidden { display: none; }
-@media (max-width: 767px){.hidden--xs--767 { display: none; }}
-@media (min-width: 768px){.hidden--sm--768 { display: none; }}
-@media (max-width: 991px){.hidden--991 { display: none; }}
-@media (max-width: 1199px){.hidden--xs--1199 { display: none; }}
-@media (min-width: 1200px){.hidden--sm--1200 { display: none; }}
-
 /*Width*/
 
 .width-49 { width: 49%; }
@@ -105,6 +97,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /*Display*/
 
 .inline-block { display: inline-block; }
+.hidden { display: none; }
+@media (max-width: 767px){.hidden--xs--767 { display: none; }}
+@media (min-width: 768px){.hidden--sm--768 { display: none; }}
+@media (max-width: 991px){.hidden--991 { display: none; }}
+@media (max-width: 1199px){.hidden--xs--1199 { display: none; }}
+@media (min-width: 1200px){.hidden--sm--1200 { display: none; }}
+
 
 /*float*/
 @media (max-width: 767px){ .float-left--xs { float: left;} }

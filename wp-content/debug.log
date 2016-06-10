@@ -136,3 +136,11 @@
 [09-Jun-2016 23:36:32 UTC] PHP Notice:  Trying to get property of non-object in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/vc_templates/zo_grid--testimonial.php on line 54
 [09-Jun-2016 23:59:24 UTC] PHP Fatal error:  Call to undefined function get_fact_sheets_admin_email_body() in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/functions.php on line 907
 [09-Jun-2016 23:59:39 UTC] PHP Fatal error:  Call to undefined function get_fact_sheets_admin_email_body() in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/functions.php on line 907
+[10-Jun-2016 15:05:13 UTC] PHP Notice:  Trying to get property of non-object in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/vc_templates/zo_grid--testimonial.php on line 54
+[10-Jun-2016 15:06:40 UTC] PHP Notice:  Trying to get property of non-object in /Users/chiragsharma/Documents/sites/price-point/wp-includes/post.php on line 1708
+[10-Jun-2016 15:06:40 UTC] PHP Notice:  Trying to get property of non-object in /Users/chiragsharma/Documents/sites/price-point/wp-includes/post.php on line 1708
+[10-Jun-2016 15:06:42 UTC] PHP Notice:  Trying to get property of non-object in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/vc_templates/zo_grid--testimonial.php on line 54
+[10-Jun-2016 15:06:42 UTC] PHP Notice:  Trying to get property of non-object in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/vc_templates/zo_grid--testimonial.php on line 54
+[10-Jun-2016 15:09:36 UTC] PHP Notice:  Trying to get property of non-object in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/vc_templates/zo_grid--testimonial.php on line 54
+[10-Jun-2016 15:09:59 UTC] PHP Notice:  Trying to get property of non-object in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/vc_templates/zo_grid--testimonial.php on line 54
+[10-Jun-2016 15:10:59 UTC] PHP Notice:  Trying to get property of non-object in /Users/chiragsharma/Documents/sites/price-point/wp-content/themes/lucian/vc_templates/zo_grid--testimonial.php on line 54
