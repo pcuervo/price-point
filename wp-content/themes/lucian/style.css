@@ -246,8 +246,10 @@ header .container-fluid { padding-left: 0px; padding-right: 0px; }
 
 @media screen and (min-width: 992px){
 	#zo-header-logo { padding-left: 15px!important; }
-	#zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li > a { color: #7bbb05; }
-	#zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li > a:hover { color: #1784cb; }
+	#zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li > a,
+	#zo-header.zo-main-header.header-fixed #zo-header-navigation .main-navigation .menu-main-menu > li > a { color: #7bbb05!important; }
+	#zo-header-navigation.menu-price-point .main-navigation .menu-main-menu > li > a:hover,
+	#zo-header.zo-main-header.header-fixed #zo-header-navigation .main-navigation .menu-main-menu > li > a:hover { color: #1784cb!important; }
 	#zo-header-navigation .main-navigation .menu-main-menu * { border-bottom: none!important;}
 }
 
