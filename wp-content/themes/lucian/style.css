@@ -36,6 +36,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .compose-mode .vc_vc_row_inner.no-padding-top{ padding-top: 0px;}
 
+@media (min-width:866px) { .padding--center {padding-top: 65px;} }
+@media (min-width:992px) { .padding--center {padding-top: 75px;} }
+@media (min-width:1200px) { .padding--center {padding-top: 100px;} }
+
 /*Margin*/
 .no-margin-bottom { margin-bottom: 0px; }
 .template-zo_fancybox--style-1.no-margin-bottom .zo-fancybox-item:last-child { margin-bottom: 0px!important; }
